@@ -152,6 +152,13 @@ ENABLED
 * Press the Windows key + R then enter services.msc
   Double-click on Printer Spooler then click Stop
   Now go to 
-  Go to Printer Spooler once again and click Start
+  Go to Printer Spooler once again and click StartDelete the printer driver
+
+* printer uninstall
+Press Win + R.
+Type:
+printui /s /t2
+
+  
 
 
