@@ -122,3 +122,36 @@ RestrictDriverInstallationToAdministrators = 0
 Restart spooler
 Add printer using:
 \\PCNAME\PrinterShareName
+
+server pc
+* Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows (right click permission) everyone
+* Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers
+new key RPC , new RpcOverTcp 0
+new: 
+* RpcOverNamedPipes 1
+
+* HKEY-LOCAL-MACHINE\SYSTEM\CURRENTCONTROLSET\CONTROL\PRINT
+RpcAuthnLevelPrivacyEnabled   0
+
+* edit group policy
+administrative Templetes
+printers
+configure rpcconnection settings
+enable
+RPC over named pipes
+
+* configure RPC listener setting 
+enabled
+RPC over named pipes and TCP
+
+* CONFIGURE OVER TCP PORT
+ENABLED
+ 0
+
+
+* Press the Windows key + R then enter services.msc
+  Double-click on Printer Spooler then click Stop
+  Now go to 
+  Go to Printer Spooler once again and click Start
+
+
